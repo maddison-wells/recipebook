@@ -18,3 +18,23 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 - **Frontend:** HTML, CSS, JavaScript, React.js
 - **Backend:** Node.js, Java, Springboot
+
+# Update Logs
+
+## Monday 18th March
+
+Scoped projected and started to build backend using Springboot and Java
+
+Database will include the following fields:
+
+- Name
+- Image
+- Creator
+- Category/Tags/Keywords
+- Source (url)
+- Date Added
+- Date Updated
+- Ingredients
+- Servings
+- Method
+- Comments
