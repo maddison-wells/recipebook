@@ -21,6 +21,14 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Tuesday 19th March
+
+Continued to work on backend
+
+Thoughts for improvements once MVP completed:
+
+- Having the comments in their own table, so that I can track the date they were created
+
 ## Monday 18th March
 
 Scoped projected and started to build backend using Springboot and Java
