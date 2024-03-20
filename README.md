@@ -21,6 +21,8 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Wednesday 20th March
+
 ## Tuesday 19th March
 
 Continued to work on backend
