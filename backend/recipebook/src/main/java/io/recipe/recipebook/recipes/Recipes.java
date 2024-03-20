@@ -38,7 +38,7 @@ public class Recipes {
 	private String source;
 	
 	@Column
-	private String tags;
+	private List<String>  tags;
 	
 	@Column
 	private List<String> ingredients;
@@ -57,6 +57,17 @@ public class Recipes {
 	public Recipes() {
 		super();
 	}
+	
+	
+
+	public Long getId() {
+		return Id;
+	}
+
+
+
+
+
 
 	public String getTitle() {
 		return title;
@@ -106,11 +117,11 @@ public class Recipes {
 		this.source = source;
 	}
 
-	public String getTags() {
+	public List<String>  getTags() {
 		return tags;
 	}
 
-	public void setTags(String tags) {
+	public void setTags(List<String> tags) {
 		this.tags = tags;
 	}
 
@@ -145,7 +156,9 @@ public class Recipes {
 	public void setServings(Number servings) {
 		this.servings = servings;
 	}
-	
+
+
+
 
 }
 

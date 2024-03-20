@@ -23,6 +23,18 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 ## Wednesday 20th March
 
+Continued to work on backend. As I was building out the controller and testing in postman my POST and GET requests, I decided to change some of the data types to List<String> as I think that will better suit my needs moving forward. However, in getting the POST functionality to work, I have broken the GET request functions, so will need to investigate tomorrow.
+
+I started to look at designs I liked, thinking very minimal, as nobody likes to read about the farm that your great uncles wife grew up on when looking at a recipe
+
+- ![Design One](https://i.pinimg.com/564x/29/c3/a6/29c3a6f8dd1b7e2fa2c06221a8ba8222.jpg)
+
+- ![Design Two](https://i.pinimg.com/564x/6b/7a/e9/6b7ae90b0d0570d019b64100b50f4e26.jpg)
+
+or a little more fancy once time permits for me to sketch up some images
+
+- ![Design Three](https://i.pinimg.com/564x/01/4c/da/014cdaa01183d1447a8f58942ccae04f.jpg)
+
 ## Tuesday 19th March
 
 Continued to work on backend

@@ -1,13 +1,12 @@
 package io.recipe.recipebook.recipes;
 
-import java.util.Date;
 import java.util.List;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 
-public class CreateRecipesDTO {
-	
-	@NotBlank
+public class UpdateRecipeDTO {
+
+	@Pattern(regexp = "^(?=\\S).*$", message = "Title Cannot be empty")
 	private String title;
 	
 	
@@ -15,10 +14,7 @@ public class CreateRecipesDTO {
 	
 	private List<String> ingredients;
 	
-	@NotBlank
 	private String method;
-	
-	private Date createdAt;
 
 	public String getTitle() {
 		return title;
@@ -51,15 +47,8 @@ public class CreateRecipesDTO {
 	public void setMethod(String method) {
 		this.method = method;
 	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	
 	
 
+	
+	
 }
