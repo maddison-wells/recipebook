@@ -24,7 +24,7 @@ The application will provide a user-friendly interface for managing my recipes. 
 ## Wednesday 20th March
 
 Continued to work on backend. As I was building out the controller and testing in postman my POST and GET requests, I decided to change some of the data types to
-`java List<String> ` as I think that will better suit my needs moving forward. However, in getting the POST functionality to work, I have broken the GET request functions, so will need to investigate tomorrow.
+`List<String> ` as I think that will better suit my needs moving forward. However, in getting the POST functionality to work, I have broken the GET request functions, so will need to investigate tomorrow.
 
 I started to look at designs I liked, thinking very minimal, as nobody likes to read about the farm that your great uncles wife grew up on when looking at a recipe
 
