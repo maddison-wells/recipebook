@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,10 +47,20 @@ public class RecipesController {
 	
 	@PatchMapping("/{id}")
 	public ResponseEntity<Recipes> updatePostById(@Valid @RequestBody UpdateRecipeDTO data, @PathVariable Long id) throws NotFoundException{
-		Optional<Recipes> maybeUpdatedPost = this.recipesService.updateById(id);
+		Optional<Recipes> maybeUpdatedPost = this.recipesService.updateById(data, id);
 		Recipes updatedPost = maybeUpdatedPost.orElseThrow(()-> new NotFoundException(Recipes.class, id));
 		return new ResponseEntity<>(updatedPost, HttpStatus.OK);
 	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Recipes> deletePostById(@PathVariable Long id) throws NotFoundException { 
+		boolean deleted = this.recipesService.deleteById(id);
+		if(!deleted) {
+			throw new NotFoundException(Recipes.class, id);
+		}
+		return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+	}
+	
 	
 }
 

@@ -16,10 +16,18 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 ## Technologies Used:
 
-- **Frontend:** HTML, CSS, JavaScript, React.js
+- **Frontend:** HTML, SCSS, JavaScript, React.js
 - **Backend:** Node.js, Java, Springboot
 
 # Update Logs
+
+## Thursday 21st March
+
+The error was due to serialization, I used 'TRUNCATE' to remove the data from database, so that all new entries had the same some conditions and information.
+
+Finished building the basic backend so that I can fetch, add, update and delete recipes. Added a Model Mapper to make the code more efficient and allowed access to the frontend so no CORS errors would occur.
+
+Started to build frontend using React.JS
 
 ## Wednesday 20th March
 
