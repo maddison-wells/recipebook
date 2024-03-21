@@ -27,7 +27,15 @@ The error was due to serialization, I used 'TRUNCATE' to remove the data from da
 
 Finished building the basic backend so that I can fetch, add, update and delete recipes. Added a Model Mapper to make the code more efficient and allowed access to the frontend so no CORS errors would occur.
 
-Started to build frontend using React.JS
+Started to build frontend using React.JS, will need to read the new docs about the updates with React that just were released.
+
+- Instead of `onsubmit` for any forms I may use there is a new `action` function, including the `useOptimistic` hook for likes/favourites.
+
+- Asset loading to make sure all CSS is loaded prior to render
+
+Draft mapping of app
+
+![Image Name](frontend/src/assets/Flowchart.png)
 
 ## Wednesday 20th March
 
