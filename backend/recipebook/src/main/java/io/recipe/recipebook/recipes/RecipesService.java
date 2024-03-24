@@ -61,8 +61,24 @@ public class RecipesService {
 		if(data.getMethod() != null) {
 			foundPost.setMethod(data.getMethod());
 		}
+		if(data.getCreator() != null) {
+			foundPost.setCreator(data.getCreator());
+		}
+		if(data.getImageURL() != null) {
+			foundPost.setImageURL(data.getImageURL());
+		}
+		if(data.getSource() != null) {
+			foundPost.setSource(data.getSource());
+		}
+		if(data.getComments() != null) {
+			foundPost.setComments(data.getComments());
+		}
+		if(data.getServings() != null) {
+			foundPost.setServings(data.getServings());
+		}
 		Recipes updated = this.repo.save(foundPost);
 		return Optional.of(updated);
+	
 	}
 
 	public boolean deleteById(Long id) {

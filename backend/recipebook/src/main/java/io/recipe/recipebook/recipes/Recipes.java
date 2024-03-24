@@ -9,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 
 @Entity
 @Table(name = "recipe_posts")
@@ -157,7 +159,17 @@ public class Recipes {
 		this.servings = servings;
 	}
 
+	@PrePersist
+	public void onCreate() {
+		Date timestamp = new Date();
+		createdAt = timestamp;
+		updatedAt = timestamp;
+	}
 
+	@PreUpdate
+	public void onUpdate() {
+		updatedAt = new Date();
+	}
 
 
 }

@@ -21,6 +21,10 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Sunday 24th March
+
+Continued to build basic frontend and made some adjustments to the backend, so that all fields could be updated, as a few weren't working.
+
 ## Thursday 21st March
 
 The error was due to serialization, I used 'TRUNCATE' to remove the data from database, so that all new entries had the same some conditions and information.

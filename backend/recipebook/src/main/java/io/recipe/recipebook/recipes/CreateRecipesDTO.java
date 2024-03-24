@@ -19,6 +19,61 @@ public class CreateRecipesDTO {
 	private String method;
 	
 	private Date createdAt;
+	
+	private String creator;
+
+	private String imageURL;
+	
+	private String source;
+	
+	public String getCreator() {
+		return creator;
+	}
+
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
+
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
+	public Number getServings() {
+		return servings;
+	}
+
+	public void setServings(Number servings) {
+		this.servings = servings;
+	}
+
+	private String comments;
+	
+	
+	private Number servings;
+	
+	
+	
+	
 
 	public String getTitle() {
 		return title;
