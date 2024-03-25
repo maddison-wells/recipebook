@@ -21,6 +21,10 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Monday 25th March
+
+Started to add styling to recipe cards and think a little more about UX, including adding conditional rendering. Hoping to complete the add page tomorrow and start to build out the data entries a bit more.
+
 ## Sunday 24th March
 
 Continued to build basic frontend and made some adjustments to the backend, so that all fields could be updated, as a few weren't working.
