@@ -16,7 +16,7 @@ export const addRecipe = async (recipeData) => {
     },
   });
   if (!response.ok) {
-    throw new Error("Failed to get posts");
+    throw new Error("Failed to add recipe");
   }
   return response.json();
 };

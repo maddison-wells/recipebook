@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&display=swap");
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 20px;
+
+  &__details {
+    margin: 20px;
+  }
+
+  &__title {
+    border-bottom: 3px solid black;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    font-weight: 300;
+    font-family: "Imbue", serif;
+  }
+
+  &__timestamp {
+    color: grey;
+    opacity: 0.8;
+    font-style: italic;
+    font-size: 10px;
+    margin-top: 0px;
+  }
+
+  &__image {
+    width: 33%;
+    height: fit-content;
+  }
+
+  &__subheading {
+    font-weight: 100;
+    font-family: "Imbue", serif;
+  }
+
+  &__tags {
+    color: grey;
+    opacity: 0.8;
+    font-style: italic;
+  }
+}
