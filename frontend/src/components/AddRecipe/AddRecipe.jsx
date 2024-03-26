@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { addRecipe } from "../../services/recipebook-services";
+import styles from "./AddRecipe.module.scss";
+import Button from "../Button/Button";
 
 const AddRecipe = () => {
   const [formData, setFormData] = useState({
@@ -10,15 +12,23 @@ const AddRecipe = () => {
     // createdAt: "",
     imageURL: "",
     servings: "",
-    ingredients: "",
+    ingredients: [],
     method: "",
     comments: "",
-    tags: "",
+    tags: [],
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+
+    if (name === "ingredients" || name === "tags") {
+      setFormData({
+        ...formData,
+        [name]: value.split(",").map((item) => item.trim()),
+      });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -32,31 +42,32 @@ const AddRecipe = () => {
   };
 
   return (
-    <div>
-      <h1>Add New Recipe</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Title:</label>
+    <div className={styles.add}>
+      <h1 className={styles.add__title}>Add New Recipe</h1>
+      <form className={styles.add__form} onSubmit={handleSubmit}>
         <input
           type="text"
           name="title"
           value={formData.title}
           onChange={handleChange}
+          required
+          placeholder="Recipe Name"
         />
 
-        <label>Creator:</label>
         <input
           type="text"
           name="creator"
           value={formData.creator}
           onChange={handleChange}
+          placeholder="Creator"
         />
 
-        <label>Source:</label>
         <input
           type="text"
           name="source"
           value={formData.source}
           onChange={handleChange}
+          placeholder="Link"
         />
         {/* 
         <label>Updated At:</label>
@@ -75,52 +86,50 @@ const AddRecipe = () => {
           onChange={handleChange}
         /> */}
 
-        <label>Image URL:</label>
         <input
           type="text"
           name="imageURL"
           value={formData.imageURL}
           onChange={handleChange}
+          placeholder="Image URL"
         />
-
-        <label>Servings:</label>
         <input
           type="text"
           name="servings"
           value={formData.servings}
           onChange={handleChange}
+          placeholder="Servings"
         />
-
-        <label>Ingredients:</label>
         <textarea
           name="ingredients"
-          value={formData.ingredients}
+          value={formData.ingredients.join(",")}
           onChange={handleChange}
+          placeholder="Ingredients: use comma to seperate"
+          required
         ></textarea>
-
-        <label>Method:</label>
         <textarea
           name="method"
           value={formData.method}
           onChange={handleChange}
+          required
+          placeholder="Directions"
         ></textarea>
-
-        <label>Comments:</label>
         <textarea
           name="comments"
           value={formData.comments}
           onChange={handleChange}
+          placeholder="Comments"
         ></textarea>
-
-        <label>Tags:</label>
         <input
           type="text"
           name="tags"
-          value={formData.tags}
+          value={formData.tags.join(",")}
           onChange={handleChange}
+          placeholder="Tags: use comma to seperate"
         />
+        <Button label={"Add Recipe"} onClick={handleSubmit} />
 
-        <button type="submit">Add Recipe</button>
+        {/* <button type="submit">Add Recipe</button> */}
       </form>
     </div>
   );

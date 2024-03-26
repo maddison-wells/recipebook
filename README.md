@@ -21,6 +21,12 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Tuesday 26th March
+
+Working on the frontend end functionality, having issues with the ingredients and method section working. I was able to make it so that each ingredient is its own `<li>` when seperated by a comma but it seems to max out after too many entries, I think this is the same issue as the method too which is a `String`
+
+Regardless, still happy with the progress I've made.
+
 ## Monday 25th March
 
 Started to add styling to recipe cards and think a little more about UX, including adding conditional rendering. Hoping to complete the add page tomorrow and start to build out the data entries a bit more.

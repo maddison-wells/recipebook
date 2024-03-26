@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        {/* <AddRecipe /> */}
+        <AddRecipe />
         <RecipeList />
         {/* <Routes>
           <Route></Route>

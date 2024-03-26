@@ -45,7 +45,7 @@ const Card = ({
             Created {formatDate(createdAt)}
           </p>
         )}
-        <div className={styles.card}>
+        <div className={styles.card__image}>
           <a href={source}>{creator}</a>
           {servings && <p>Servings {servings}</p>}
         </div>
