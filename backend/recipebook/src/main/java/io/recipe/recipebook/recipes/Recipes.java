@@ -33,7 +33,7 @@ public class Recipes {
 	@Column
 	private String creator;
 
-	@Column
+	@Column(columnDefinition = "LONGTEXT")
 	private String imageURL;
 	
 	@Column
@@ -45,7 +45,7 @@ public class Recipes {
 	@Column
 	private List<String> ingredients;
 	
-	@Column
+	@Column(columnDefinition = "LONGTEXT")
 	private String method;
 	
 	@Column

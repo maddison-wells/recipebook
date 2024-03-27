@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { addRecipe } from "../../services/recipebook-services";
 import styles from "./AddRecipe.module.scss";
 import Button from "../Button/Button";
+import { toast } from "react-toastify";
 
 const AddRecipe = () => {
   const [formData, setFormData] = useState({
@@ -35,9 +36,9 @@ const AddRecipe = () => {
     e.preventDefault();
     try {
       await addRecipe(formData);
-      console.log("Recipe added successfully!");
+      toast.success("Recipe added successfully!");
     } catch (error) {
-      console.error("Error adding recipe:", error);
+      toast.error("Error adding recipe:", error);
     }
   };
 

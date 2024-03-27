@@ -21,6 +21,14 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Wednesday 27th March
+
+Was able to identify the issue with the add function, changing the column definition to 'LONGTEXT' however, it looks like I will need to create a relationship for the ingredients if I want to keep them stored as an array.
+
+Added toast notifications, so I could stop checking the console for errors.
+
+Also thinking about adding a boolean field for favourites.
+
 ## Tuesday 26th March
 
 Working on the frontend end functionality, having issues with the ingredients and method section working. I was able to make it so that each ingredient is its own `<li>` when seperated by a comma but it seems to max out after too many entries, I think this is the same issue as the method too which is a `String`
