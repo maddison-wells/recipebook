@@ -4,14 +4,21 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
   border-bottom: 1px solid black;
 
   &__details {
     margin: 20px;
+    width: 55%;
   }
 
   &__title {
+    display: flex;
+    align-items: center;
+  }
+  &__heading {
     border-bottom: 3px solid black;
     width: fit-content;
     display: flex;
@@ -20,6 +27,13 @@
     margin-bottom: 0px;
     font-weight: 300;
     font-family: "Imbue", serif;
+  }
+
+  &__heart {
+    color: rgb(199, 102, 102);
+    margin-left: 10px;
+    font-size: 20px;
+    border-bottom: none;
   }
 
   &__timestamp {
@@ -33,6 +47,7 @@
   &__image {
     width: 33%;
     height: fit-content;
+    margin-right: 30px;
   }
 
   &__subheading {
@@ -45,4 +60,11 @@
     opacity: 0.8;
     font-style: italic;
   }
+}
+
+a,
+span {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }

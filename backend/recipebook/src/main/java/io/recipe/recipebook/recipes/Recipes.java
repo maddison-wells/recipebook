@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
@@ -53,11 +54,18 @@ public class Recipes {
 	
 	@Column
 	private Number servings;
+	
+	@Column(nullable = false)
+	@NotNull
+	private Boolean favourite;
 
 
 
 	public Recipes() {
 		super();
+		 
+		        this.favourite = false; 
+		    
 	}
 	
 	
@@ -66,8 +74,15 @@ public class Recipes {
 		return Id;
 	}
 
+	public boolean isFavourite() {
+		return favourite;
+	}
 
 
+
+	public void setFavourite(boolean favourite) {
+		this.favourite = favourite;
+	}
 
 
 

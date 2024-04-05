@@ -11,9 +11,14 @@
     "sass:watch": "sass --watch styles.scss:styles.css"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
+    "react-select": "^5.8.0",
     "react-toastify": "^10.0.5",
     "sass": "^1.72.0"
   },

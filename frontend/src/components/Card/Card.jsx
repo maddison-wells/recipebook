@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Card.module.scss";
 import noImage from "../../assets/no-image.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 
 function formatDate(timestamp) {
   const date = new Date(timestamp);
@@ -25,7 +29,14 @@ const Card = ({
   servings,
   creator,
   id,
+  favourite,
 }) => {
+  const [isFavorite, setIsFavorite] = useState(favourite);
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <div className={styles.card}>
       <img
@@ -35,7 +46,14 @@ const Card = ({
       />
 
       <div className={styles.card__details}>
-        <h1 className={styles.card__title}>{title.toUpperCase()}</h1>
+        <div className={styles.card__title}>
+          <h1 className={styles.card__heading}>{title.toUpperCase()}</h1>
+          <FontAwesomeIcon
+            icon={isFavorite ? fasHeart : farHeart}
+            className={styles.card__heart}
+            onClick={toggleFavorite}
+          />
+        </div>
         {updatedAt ? (
           <p className={styles.card__timestamp}>
             Last updated {formatDate(updatedAt)}
@@ -46,13 +64,20 @@ const Card = ({
           </p>
         )}
         <div className={styles.card__image}>
-          <a href={source}>{creator}</a>
+          {source ? (
+            <a href={source} target="_blank">
+              {creator}
+              <FontAwesomeIcon icon={faLink} />
+            </a>
+          ) : (
+            <span>{creator}</span>
+          )}
           {servings && <p>Servings {servings}</p>}
         </div>
         <h2 className={styles.card__subheading}>INGREDIENTS</h2>
         <ul>
-          {ingredients.map((ingredients, index) => (
-            <li key={index}>{ingredients}</li>
+          {ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
           ))}
         </ul>
         <h2 className={styles.card__subheading}>DIRECTIONS</h2>

@@ -21,6 +21,14 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Friday 5th April
+
+Spent some time restyling, thought about adding a shopping list function. I was thinking of having each ingredient have a radio button and when selected, that ingredient is populated into a shopping list. Will most likely need a another database to store these.
+
+Created a HamburgerNav component and will use this to navigate to pages like categories and favourites.
+
+Reconfigured database to have a favourites column and made a love heart icon that can be toggled to filled/unfilled based on if the recipe is a favourite or not. Had issues updating the existing recipes to not have a null value but was able to fix this and get the fetch working again.
+
 ## Wednesday 27th March
 
 Was able to identify the issue with the add function, changing the column definition to 'LONGTEXT' however, it looks like I will need to create a relationship for the ingredients if I want to keep them stored as an array.

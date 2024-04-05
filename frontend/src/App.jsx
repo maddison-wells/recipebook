@@ -5,14 +5,17 @@ import AddRecipe from "./components/AddRecipe/AddRecipe";
 import RecipeList from "./container/RecipeList/RecipeList";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar setSearchTerm={setSearchTerm} />
         <Routes>
-          <Route path="/" element={<RecipeList />} />
+          <Route path="/" element={<RecipeList searchTerm={searchTerm} />} />
           <Route path="/add" element={<AddRecipe />} />
         </Routes>
       </BrowserRouter>

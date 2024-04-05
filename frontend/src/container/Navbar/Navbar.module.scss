@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(74, 56, 73);
+  padding: 20px;
+  color: white;
+
+  &__title {
+    font-size: 15px;
+    width: fit-content;
+    text-decoration: none;
+    color: white;
+  }
+
+  &__row {
+    display: flex;
+    gap: 10px;
+  }
+}

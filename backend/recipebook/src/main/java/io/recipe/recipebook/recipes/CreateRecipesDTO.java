@@ -26,6 +26,8 @@ public class CreateRecipesDTO {
 	
 	private String source;
 	
+	private Boolean favourite;
+	
 	public String getCreator() {
 		return creator;
 	}
@@ -113,6 +115,14 @@ public class CreateRecipesDTO {
 
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
+	}
+
+	public boolean isFavourite() {
+		return favourite;
+	}
+
+	public void setFavourite(Boolean favourite) {
+		this.favourite = favourite;
 	}
 	
 	

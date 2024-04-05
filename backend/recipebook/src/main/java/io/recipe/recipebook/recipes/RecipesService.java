@@ -76,6 +76,10 @@ public class RecipesService {
 		if(data.getServings() != null) {
 			foundPost.setServings(data.getServings());
 		}
+		
+		foundPost.setFavourite(data.isFavourite());
+
+		
 		Recipes updated = this.repo.save(foundPost);
 		return Optional.of(updated);
 	
