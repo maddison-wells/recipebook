@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Card from "../../components/Card/Card";
 import { getAllRecipes } from "../../services/recipebook-services";
 import Button from "../../components/Button/Button";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const RecipeList = ({ searchTerm }) => {
+const FavourtiesPage = () => {
   const [recipes, setRecipes] = useState([]);
   const navigate = useNavigate();
 
@@ -15,15 +15,18 @@ const RecipeList = ({ searchTerm }) => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const recipesData = await getAllRecipes(searchTerm);
-        setRecipes(recipesData);
+        const allRecipes = await getAllRecipes();
+        const favouriteRecipes = allRecipes.filter(
+          (recipe) => recipe.favourite === true
+        );
+        setRecipes(favouriteRecipes);
       } catch (error) {
         console.error("Error fetching recipes:", error);
       }
     };
 
     fetchRecipes();
-  }, [searchTerm]);
+  }, []);
 
   return (
     <div>
@@ -50,4 +53,4 @@ const RecipeList = ({ searchTerm }) => {
   );
 };
 
-export default RecipeList;
+export default FavourtiesPage;

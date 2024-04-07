@@ -21,6 +21,14 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Saturday 6th April
+
+Fixed ingredients issue I was encountering with the data not being stored in the database, I changed the data to a string(LONGTEXT) and changed the map function in JS to seperate by commas.
+
+## Saturday 5th April
+
+Had troubles getting the favourite button to work, after spending way too much time going through the code, it was a simple issue of the id not being passed as a prop from the parent container.
+
 ## Friday 5th April
 
 Spent some time restyling, thought about adding a shopping list function. I was thinking of having each ingredient have a radio button and when selected, that ingredient is populated into a shopping list. Will most likely need a another database to store these.

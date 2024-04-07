@@ -12,7 +12,7 @@ public class UpdateRecipeDTO {
 
     private List<String> tags;
 
-    private List<String> ingredients;
+    private String ingredients;
 
     private String method;
 
@@ -30,7 +30,7 @@ public class UpdateRecipeDTO {
 
     private Number servings;
 
-    private Boolean favourite;
+    private boolean favourite;
 
     public Number getServings() {
         return servings;
@@ -88,11 +88,11 @@ public class UpdateRecipeDTO {
         this.tags = tags;
     }
 
-    public List<String> getIngredients() {
+    public String getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<String> ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -120,11 +120,11 @@ public class UpdateRecipeDTO {
         this.comments = comments;
     }
 
-    public Boolean isFavourite() {
+    public boolean isFavourite() {
         return favourite;
     }
 
-    public void setFavourite(Boolean favourite) {
+    public void setFavourite(boolean favourite) {
         this.favourite = favourite;
     }
 

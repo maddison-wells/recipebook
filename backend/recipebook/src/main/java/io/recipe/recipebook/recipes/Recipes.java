@@ -43,8 +43,12 @@ public class Recipes {
 	@Column
 	private List<String>  tags;
 	
-	@Column
-	private List<String> ingredients;
+//	@Column
+//	private List<String> ingredients;
+	
+	
+	@Column(columnDefinition = "LONGTEXT")
+	private String ingredients;
 	
 	@Column(columnDefinition = "LONGTEXT")
 	private String method;
@@ -57,7 +61,7 @@ public class Recipes {
 	
 	@Column(nullable = false)
 	@NotNull
-	private Boolean favourite;
+	private boolean favourite;
 
 
 
@@ -142,11 +146,11 @@ public class Recipes {
 		this.tags = tags;
 	}
 
-	public List<String> getIngredients() {
+	public String getIngredients() {
 		return ingredients;
 	}
 
-	public void setIngredients(List<String> ingredients) {
+	public void setIngredients(String ingredients) {
 		this.ingredients = ingredients;
 	}
 

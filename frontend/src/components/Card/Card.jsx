@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
+import { updateRecipeFavouriteStatus } from "../../services/recipebook-services";
 
 function formatDate(timestamp) {
   const date = new Date(timestamp);
@@ -34,7 +35,19 @@ const Card = ({
   const [isFavorite, setIsFavorite] = useState(favourite);
 
   const toggleFavorite = () => {
-    setIsFavorite(!isFavorite);
+    console.log(id);
+    const newFavouriteStatus = !isFavorite;
+    setIsFavorite(newFavouriteStatus);
+
+    updateRecipeFavouriteStatus(id, newFavouriteStatus)
+      .then(() => {
+        console.log("Favourite status updated successfully");
+      })
+      .catch((error) => {
+        console.error("Failed to update favourite status:", error);
+
+        setIsFavorite(isFavorite);
+      });
   };
 
   return (
@@ -76,8 +89,8 @@ const Card = ({
         </div>
         <h2 className={styles.card__subheading}>INGREDIENTS</h2>
         <ul>
-          {ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
+          {ingredients.split(",").map((ingredient, index) => (
+            <li key={index}>{ingredient.trim()}</li>
           ))}
         </ul>
         <h2 className={styles.card__subheading}>DIRECTIONS</h2>
