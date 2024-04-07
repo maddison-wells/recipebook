@@ -21,7 +21,7 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
-## Saturday 6th April
+## Sunday 7th April
 
 Fixed ingredients issue I was encountering with the data not being stored in the database, I changed the data to a string(LONGTEXT) and changed the map function in JS to seperate by commas.
 
