@@ -21,6 +21,10 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Monday 8th April
+
+Went a little out of scope today to add an Ideas field to my database, after finding a recipe I wanted to use soon. I also researched into adding Google Authetication but having troubles getting it to work
+
 ## Sunday 7th April
 
 Fixed ingredients issue I was encountering with the data not being stored in the database, I changed the data to a string(LONGTEXT) and changed the map function in JS to seperate by commas.

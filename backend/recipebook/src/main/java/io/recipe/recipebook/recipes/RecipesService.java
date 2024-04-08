@@ -78,6 +78,7 @@ public class RecipesService {
 		}
 		
 		foundPost.setFavourite(data.isFavourite());
+		foundPost.setIdea(data.isIdea());
 
 		
 		Recipes updated = this.repo.save(foundPost);

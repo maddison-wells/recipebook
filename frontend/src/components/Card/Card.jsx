@@ -4,8 +4,17 @@ import noImage from "../../assets/no-image.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
-import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
-import { updateRecipeFavouriteStatus } from "../../services/recipebook-services";
+import {
+  faHeart as fasHeart,
+  faLightbulb as fasLightbulb,
+} from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb as farLightbulb } from "@fortawesome/free-regular-svg-icons";
+
+import {
+  updateRecipeFavouriteStatus,
+  updateRecipeIdeaStatus,
+} from "../../services/recipebook-services";
+import { toast } from "react-toastify";
 
 function formatDate(timestamp) {
   const date = new Date(timestamp);
@@ -31,22 +40,36 @@ const Card = ({
   creator,
   id,
   favourite,
+  idea,
 }) => {
   const [isFavorite, setIsFavorite] = useState(favourite);
+  const [isIdea, setIsIdea] = useState(idea);
 
   const toggleFavorite = () => {
-    console.log(id);
     const newFavouriteStatus = !isFavorite;
     setIsFavorite(newFavouriteStatus);
 
     updateRecipeFavouriteStatus(id, newFavouriteStatus)
       .then(() => {
-        console.log("Favourite status updated successfully");
+        toast.success("Recipe added to favorites!");
       })
       .catch((error) => {
-        console.error("Failed to update favourite status:", error);
+        console.error("Failed to update favorite status:", error);
+        setIsFavorite(!newFavouriteStatus);
+      });
+  };
 
-        setIsFavorite(isFavorite);
+  const toggleIdea = () => {
+    const newIdeaStatus = !isIdea;
+    setIsIdea(newIdeaStatus);
+
+    updateRecipeIdeaStatus(id, newIdeaStatus)
+      .then(() => {
+        toast.success("Recipe added to ideas!");
+      })
+      .catch((error) => {
+        console.error("Failed to update idea status:", error);
+        setIsIdea(!newIdeaStatus);
       });
   };
 
@@ -66,6 +89,11 @@ const Card = ({
             className={styles.card__heart}
             onClick={toggleFavorite}
           />
+          <FontAwesomeIcon
+            icon={isIdea ? fasLightbulb : farLightbulb}
+            className={styles.card__idea}
+            onClick={toggleIdea}
+          />
         </div>
         {updatedAt ? (
           <p className={styles.card__timestamp}>
@@ -78,7 +106,7 @@ const Card = ({
         )}
         <div className={styles.card__image}>
           {source ? (
-            <a href={source} target="_blank">
+            <a href={source} target="_blank" rel="noopener noreferrer">
               {creator}
               <FontAwesomeIcon icon={faLink} />
             </a>

@@ -31,6 +31,8 @@ public class UpdateRecipeDTO {
     private Number servings;
 
     private boolean favourite;
+    
+    private boolean idea;
 
     public Number getServings() {
         return servings;
@@ -126,6 +128,15 @@ public class UpdateRecipeDTO {
 
     public void setFavourite(boolean favourite) {
         this.favourite = favourite;
+    }
+
+	public boolean isIdea() {
+		return idea;
+	}
+	
+
+    public void setaIdea(boolean idea) {
+        this.idea = idea;
     }
 
 }

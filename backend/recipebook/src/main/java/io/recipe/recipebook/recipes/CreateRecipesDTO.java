@@ -13,7 +13,7 @@ public class CreateRecipesDTO {
 	
 	private List<String> tags;
 	
-	private List<String> ingredients;
+	private String ingredients;
 	
 	@NotBlank
 	private String method;
@@ -26,7 +26,9 @@ public class CreateRecipesDTO {
 	
 	private String source;
 	
-	private Boolean favourite;
+	private boolean favourite = false;
+	
+	private boolean idea = false;
 	
 	public String getCreator() {
 		return creator;
@@ -93,11 +95,11 @@ public class CreateRecipesDTO {
 		this.tags = tags;
 	}
 
-	public List<String> getIngredients() {
+	public String getIngredients() {
 		return ingredients;
 	}
 
-	public void setIngredients(List<String> ingredients) {
+	public void setIngredients(String ingredients) {
 		this.ingredients = ingredients;
 	}
 
@@ -125,6 +127,13 @@ public class CreateRecipesDTO {
 		this.favourite = favourite;
 	}
 	
+	public boolean isIdea() {
+		return idea;
+	}
+
+	public void setIdea(Boolean idea) {
+		this.idea = idea;
+	}
 	
 
 }

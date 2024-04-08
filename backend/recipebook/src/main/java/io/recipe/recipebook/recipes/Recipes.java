@@ -62,6 +62,22 @@ public class Recipes {
 	@Column(nullable = false)
 	@NotNull
 	private boolean favourite;
+	
+	@Column(nullable = false)
+	@NotNull
+	private boolean idea;
+
+
+
+	public boolean isIdea() {
+		return idea;
+	}
+
+
+
+	public void setIdea(boolean idea) {
+		this.idea = idea;
+	}
 
 
 
@@ -69,7 +85,7 @@ public class Recipes {
 		super();
 		 
 		        this.favourite = false; 
-		    
+		        this.idea = false;   
 	}
 	
 	

@@ -13,7 +13,7 @@ const AddRecipe = () => {
     // createdAt: "",
     imageURL: "",
     servings: "",
-    ingredients: [],
+    ingredients: "",
     method: "",
     comments: "",
     tags: [],
@@ -22,7 +22,7 @@ const AddRecipe = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "ingredients" || name === "tags") {
+    if (name === "tags") {
       setFormData({
         ...formData,
         [name]: value.split(",").map((item) => item.trim()),
@@ -103,7 +103,7 @@ const AddRecipe = () => {
         />
         <textarea
           name="ingredients"
-          value={formData.ingredients.join(",")}
+          value={formData.ingredients}
           onChange={handleChange}
           placeholder="Ingredients: use comma to seperate"
           required

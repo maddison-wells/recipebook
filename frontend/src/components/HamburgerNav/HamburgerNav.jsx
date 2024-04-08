@@ -11,6 +11,7 @@ const HamburgerNav = () => {
     { value: "home", label: "Home" },
     { value: "favourites", label: "Favourites" },
     { value: "categories", label: "Categories" },
+    { value: "idea", label: "Ideas" },
   ];
 
   return (

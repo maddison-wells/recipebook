@@ -64,3 +64,20 @@ export const updateRecipeFavouriteStatus = async (id, favourite) => {
   }
   return response.json();
 };
+
+export const updateRecipeIdeaStatus = async (id, idea) => {
+  const response = await fetch(`http://localhost:8080/posts/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify({ idea }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    console.log({ id });
+    console.log(JSON.stringify({ favourite }));
+    throw new Error("Failed to update recipe's idea status.");
+  }
+  return response.json();
+};
