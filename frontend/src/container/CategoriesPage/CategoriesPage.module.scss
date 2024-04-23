@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&display=swap");
+
+.categories {
+  margin: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__heading {
+    font-weight: 300;
+    font-family: "Imbue", serif;
+    margin: 30px;
+    text-align: center;
+    font-size: 100px;
+    color: rgb(74, 56, 73);
+  }
+
+  &__letter {
+    font-weight: 300;
+    font-size: 40px;
+    font-family: "Imbue", serif;
+    color: rgb(74, 56, 73);
+    // text-align: center;
+  }
+  &__list {
+    width: 25%;
+    margin: 20px;
+  }
+}
+
+ul {
+  list-style: none;
+  font-weight: 300;
+  font-family: "Imbue", serif;
+}
+a {
+  font-weight: 300;
+  font-family: "Imbue", serif;
+}
+
+a:hover {
+  color: rgb(74, 56, 73);
+  font-weight: bold;
+}

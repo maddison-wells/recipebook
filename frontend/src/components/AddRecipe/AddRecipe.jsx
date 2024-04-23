@@ -3,14 +3,15 @@ import { addRecipe } from "../../services/recipebook-services";
 import styles from "./AddRecipe.module.scss";
 import Button from "../Button/Button";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AddRecipe = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: "",
     creator: "",
     source: "",
-    // updatedAt: "",
-    // createdAt: "",
     imageURL: "",
     servings: "",
     ingredients: "",
@@ -37,8 +38,9 @@ const AddRecipe = () => {
     try {
       await addRecipe(formData);
       toast.success("Recipe added successfully!");
+      navigate("/");
     } catch (error) {
-      toast.error("Error adding recipe:", error);
+      toast.error("Error adding recipe: " + error.toString());
     }
   };
 

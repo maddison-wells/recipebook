@@ -21,6 +21,16 @@ The application will provide a user-friendly interface for managing my recipes. 
 
 # Update Logs
 
+## Tuesday 23rd April
+
+Worked on styling a little inbetween reading up on Azure. I was able to create an Azure account, the server and SQL database but having issues with permissions. Will timebox this tomorrow.
+
+I also created a functional categories page on the app, that will render out all the tags without repeats and link to any recipes containing that tag when clicked.
+
+## Monday 22nd April
+
+Started to look into deployment, researching how to deploy with Azure with a CI CD pipeline.
+
 ## Monday 8th April
 
 Went a little out of scope today to add an Ideas field to my database, after finding a recipe I wanted to use soon. I also researched into adding Google Authetication but having troubles getting it to work

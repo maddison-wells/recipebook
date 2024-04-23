@@ -11,6 +11,7 @@ import Login from "./components/Login/Login";
 import Logout from "./components/Login/Logout";
 import { gapi } from "gapi-script";
 import IdeaPage from "./container/IdeasPage/IdeasPage";
+import CategoriesPage from "./container/CategoriesPage/CategoriesPage";
 
 const clientId =
   "138139961564 - r074ans3qdt0duoi9acto3hgjkstrvqi.apps.googleusercontent.com";
@@ -40,6 +41,10 @@ function App() {
           <Route path="/add" element={<AddRecipe />} />
           <Route path="/favourites" element={<FavourtiesPage />} />
           <Route path="/idea" element={<IdeaPage />} />
+          <Route
+            path="/categories"
+            element={<CategoriesPage setSearchTerm={setSearchTerm} />}
+          />
         </Routes>
       </BrowserRouter>
 

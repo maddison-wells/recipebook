@@ -16,7 +16,11 @@ const RecipeList = ({ searchTerm }) => {
     const fetchRecipes = async () => {
       try {
         const recipesData = await getAllRecipes(searchTerm);
-        setRecipes(recipesData);
+        const sortedRecipes = recipesData.sort((a, b) =>
+          a.title.localeCompare(b.title)
+        );
+
+        setRecipes(sortedRecipes);
       } catch (error) {
         console.error("Error fetching recipes:", error);
       }
